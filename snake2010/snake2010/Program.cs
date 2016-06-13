@@ -19,6 +19,10 @@ namespace snake2010
             HorizontalLine Line = new HorizontalLine(5,10,8,'+');
             Line.Drow();
 
+            VerticalLine VLine = new VerticalLine(1, 20, 2, '|');
+            VLine.Drow();
+
+
             Console.ReadLine();
         }
     }
