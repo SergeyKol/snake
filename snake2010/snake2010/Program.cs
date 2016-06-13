@@ -32,6 +32,29 @@ namespace snake2010
 
             numList.RemoveAt(0);
 
+
+            List<char> charList = new List<char>();
+            charList.Add('*');
+            charList.Add('#');
+            charList.Add('$');
+
+            char a = charList[0];
+            char b = charList[1];
+            char c = charList[2];
+
+            foreach (char j in charList)
+            {
+                Console.WriteLine(j);
+            }
+
+            charList.RemoveAt(0);
+
+
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            pList.Add(p2);
+
+
             Console.ReadLine();
         }
     }
