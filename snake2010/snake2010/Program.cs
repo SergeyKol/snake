@@ -13,7 +13,7 @@ namespace snake2010
             int x = 1;
             Func1(x);
             Console.WriteLine("Call Func1. x = " + x);
-
+            
             x = 1;
             Func2(x);
             Console.WriteLine("Call Func2. x = " + x);
