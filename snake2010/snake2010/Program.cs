@@ -13,6 +13,9 @@ namespace snake2010
         {
             Console.SetBufferSize(80,25); //задаём размер окна и убираем возможность перемотки;
 
+            Console.WriteLine("Нажмите enter, чтобы начать");
+            Console.ReadLine();
+
             //Point p1 = new Point(1, 3, '*');
             //p1.Draw();
 
