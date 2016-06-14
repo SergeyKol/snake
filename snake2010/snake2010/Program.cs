@@ -37,17 +37,23 @@ namespace snake2010
             leftLine.Drow();
             rightLine.Drow();
 
+            //начальная точка
             Point p = new Point(4, 5, '*');
+            //змейка
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300); 
+
+            //управление змейкой
+            while (true)
+            {
+                if (Console.KeyAvailable) //нажатие кнопки было или нет
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); //читаем нажатую кнопку
+                    snake.HandleKey(key.Key); //обрабатываем нажатую кнопку
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
             //Console.ReadLine();
         }
     }
