@@ -43,16 +43,31 @@ namespace snake2010
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
 
+            //Создаём еду для змейки
+            FoodCreator foodCreator = new FoodCreator(80,25,'$'); //Диапозон поля в котором может быть создана еда
+            Point food = foodCreator.CreateFood(); //точка создания еды на поле
+            food.Draw(); // отрисовываем еду
+
+
             //управление змейкой
             while (true)
             {
+                if (snake.Eat(food)) //змея нашла еду
+                {
+                    food = foodCreator.CreateFood(); //создаём новую еду
+                    food.Draw(); //отрисовываем еду
+                }
+                else //еды нет ползём дальше
+                {
+                    snake.Move();
+                }
+                Thread.Sleep(100);
+
                 if (Console.KeyAvailable) //нажатие кнопки было или нет
                 {
                     ConsoleKeyInfo key = Console.ReadKey(); //читаем нажатую кнопку
                     snake.HandleKey(key.Key); //обрабатываем нажатую кнопку
                 }
-                Thread.Sleep(100);
-                snake.Move();
             }
             //Console.ReadLine();
         }
