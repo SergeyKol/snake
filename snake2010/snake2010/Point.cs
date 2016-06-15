@@ -19,16 +19,16 @@ namespace snake2010
 
         public Point(int _x, int _y, char _sym)
         {
-            x = _x;
-            y = _y;
-            sym = _sym;
+            this.x = _x;
+            this.y = _y;
+            this.sym = _sym;
         }
 
         public Point(Point p)
         {
-            x = p.x;
-            y = p.y;
-            sym = p.sym; 
+            this.x = p.x;
+            this.y = p.y;
+            this.sym = p.sym; 
         }
 
         public void Move(int offset, Direction direction)
