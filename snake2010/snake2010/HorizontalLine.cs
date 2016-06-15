@@ -18,5 +18,13 @@ namespace snake2010
             }
 
         }
+
+	public override void Drow()
+	{
+		Console.ForegroundColor = ConsoleColor.Yellow;
+        base.Drow();
+		Console.ForegroundColor = ConsoleColor.White;
+	}
+
     }
 }
