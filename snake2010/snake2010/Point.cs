@@ -63,6 +63,14 @@ namespace snake2010
             Console.Write(sym);
         }
 
+        public void DrawFood()
+        {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(x, y);
+                Console.Write(sym);
+                Console.ForegroundColor = ConsoleColor.White;
+        }
+
         public void Clear()
         {
             sym = ' ';

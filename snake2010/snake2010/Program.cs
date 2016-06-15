@@ -40,7 +40,8 @@ namespace snake2010
             //Создаём еду для змейки
             FoodCreator foodCreator = new FoodCreator(80,25,'$'); //Диапозон поля в котором может быть создана еда
             Point food = foodCreator.CreateFood(); //точка создания еды на поле
-            food.Draw(); // отрисовываем еду
+            food.DrawFood(); // отрисовываем еду
+            
 
 
             //управление змейкой
@@ -54,7 +55,7 @@ namespace snake2010
                 if (snake.Eat(food)) //змея нашла еду
                 {
                     food = foodCreator.CreateFood(); //создаём новую еду
-                    food.Draw(); //отрисовываем еду
+                    food.DrawFood(); //отрисовываем еду
                 }
                 else //еды нет ползём дальше
                 {
