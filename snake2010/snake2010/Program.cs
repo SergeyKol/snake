@@ -13,13 +13,15 @@ namespace snake2010
         {
             Console.SetBufferSize(80,25); //задаём размер окна и убираем возможность перемотки;
 
+            Console.WriteLine("Нажмите enter, чтобы начать");
+            Console.ReadLine();
+
             Walls walls = new Walls(80, 25);
             Console.ForegroundColor = ConsoleColor.Yellow;
             walls.Draw();
             Console.ForegroundColor = ConsoleColor.White;
 
-            //Console.WriteLine("Нажмите enter, чтобы начать");
-            //Console.ReadLine();
+
 
             //Point p1 = new Point(1, 3, '*');
             //p1.Draw();
@@ -53,6 +55,10 @@ namespace snake2010
             {
                 if (walls.IsHit(snake) || snake.IsHitTail()) //проверяю столкновение змейки и стены(границы игрового поля) или столкновение со своим хвостом
                 {
+                    HorizontalLine GOupLine = new HorizontalLine(33, 33, 12, ' ');
+                    GOupLine.Drow();
+                    Console.WriteLine("Вы проиграли!");
+                    Console.ReadLine();
                     break; //если столкновение было выходим из игры
                 }
 
