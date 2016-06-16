@@ -14,7 +14,9 @@ namespace snake2010
             Console.SetBufferSize(80,25); //задаём размер окна и убираем возможность перемотки;
 
             Walls walls = new Walls(80, 25);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             walls.Draw();
+            Console.ForegroundColor = ConsoleColor.White;
 
             //Console.WriteLine("Нажмите enter, чтобы начать");
             //Console.ReadLine();
@@ -35,7 +37,9 @@ namespace snake2010
             Point p = new Point(4, 5, '*');
             //змейка
             Snake snake = new Snake(p, 4, Direction.RIGHT);
+            Console.ForegroundColor = ConsoleColor.Green;
             snake.Drow();
+            
 
             //Создаём еду для змейки
             FoodCreator foodCreator = new FoodCreator(80,25,'$'); //Диапозон поля в котором может быть создана еда
@@ -61,7 +65,7 @@ namespace snake2010
                 {
                     snake.Move();
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(150);
 
                 if (Console.KeyAvailable) //нажатие кнопки было или нет
                 {

@@ -31,6 +31,7 @@ namespace snake2010
             pList.Add(head);
 
             tail.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             head.Draw();
 
         }
@@ -56,13 +57,13 @@ namespace snake2010
 
         public void HandleKey(ConsoleKey key)
         {
-            if (key == ConsoleKey.LeftArrow)
+            if (key == ConsoleKey.LeftArrow && direction != Direction.RIGHT) //сверяю нажатую клавишу с направлением переданым змейке, так же проверяю что направление змейки не идёт в противоход с нажатой клавишей.
                 direction = Direction.LEFT;
-            else if (key == ConsoleKey.RightArrow)
+            else if (key == ConsoleKey.RightArrow && direction != Direction.LEFT)
                 direction = Direction.RIGHT;
-            else if (key == ConsoleKey.UpArrow)
+            else if (key == ConsoleKey.UpArrow && direction != Direction.DOWN)
                 direction = Direction.UP;
-            else if (key == ConsoleKey.DownArrow)
+            else if (key == ConsoleKey.DownArrow && direction != Direction.UP)
                 direction = Direction.DOWN;
         }
 
@@ -71,6 +72,7 @@ namespace snake2010
             Point head = GetNextPoint();
             if (head.IsHit(food))
             {
+                head.Draw(); //при столкновении головы с едой, отрисовываю голову змеи на координатах столкновения. 
                 food.sym = head.sym;
                 pList.Add(food);
                 return true;
